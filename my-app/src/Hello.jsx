@@ -1,16 +1,30 @@
 
 function Hello(){
-    const name = "ankit"
-    const headingStyle = {
-        color:"red",
-        textAlign:"center",
-        backgroundColor:"pink",
-        fontSize:50 
+    
+    const getName = (yourname) => {
+        return yourname;
     }
+
+    function handleClick(){
+        alert("Button was clicked!")
+    }
+
+    const handleInput = (event) => {
+        console.clear()
+          console.log("Value", event.target.value)
+    }
+
+    const handleMouseOver = () => console.log("Mouse is over the text")
+    const handleDoubleClick = () => console.log("Mouse was double click")
+
+    const name = "ankit"; 
     return (
         <>
-        <h2 style={{  color:"red",textAlign:"center",}}> Hello {name}!</h2>
-        <p className='test'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea minus, quibusdam sit cumque voluptatem sapiente enim molestiae qui, eaque ipsa nihil cum sunt dolor unde fuga atque tempore, officiis esse.</p>
+       <h1>hello {getName(name)}</h1>
+       <p onMouseOver={handleMouseOver} onDoubleClick={handleDoubleClick}>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+       <button onClick={handleClick}>Click Me</button>
+       <button onClick={() => alert("hellow from inline function")}>Say Hello</button>
+       <input type="text" onChange={handleInput} placeholder="Type Something "/>
         </>
     )
 
