@@ -1,18 +1,17 @@
-import './App.css'
-
-function Hello(){
+function Hello({name, age, city, hobbies}){
     
-     const isVisible = false;
-     const visibility = isVisible ? "visible" : "unvisible";
-
-    return (
-        <div>
-            <h1 className={visibility}>Conditional rendering</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni unde, inventore ut iure voluptas necessitatibus esse quidem sint voluptatem ipsa veritatis natus eveniet iste error repellat, eos doloremque earum. Voluptatibus.</p>
-        </div>
-    )
-     
-
+return (
+    <>
+    <h2>Hello, {name}</h2>
+    <p>Age: {age}</p>
+    <p>City: {city}</p>
+    <ul>
+        {hobbies.map((hobby, index)=> (
+            <li key={index}>{hobby}</li>
+        ))}
+    </ul>
+    </>
+)
 }
 
 

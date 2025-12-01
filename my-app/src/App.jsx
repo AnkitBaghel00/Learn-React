@@ -1,13 +1,17 @@
 import Hello from "./Hello"
-import Bye from "./Bye"
+import Button from "./Button"
 function App() {
- const isLoggedIn = false;
+    const hobbies = ["Robotics", "Reading", "Travelling"]
 
- if(isLoggedIn){
-  return <Hello />
- }else{
-  return <Bye /> 
- }
+    function Message(){
+        alert("Hello from message box")
+    }
+ return(
+    <>
+    <Hello name="Radhika" age={21} city="Pune" hobbies={hobbies}/>
+    <Button label="Click Me" handleClick={Message} />
+    </>
+ )
 }
 
 export default App
